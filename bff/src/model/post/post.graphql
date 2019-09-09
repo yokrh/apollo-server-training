@@ -1,0 +1,30 @@
+# import Comment from '../comment/comment.graphql'
+
+type Post {
+  """
+  Post ID
+  """
+  id: ID!
+
+  """
+  Post text
+  """
+  text: String!
+
+  """
+  Post tags
+  """
+  tags: [String]
+
+  """
+  Post comments
+  """
+  comments: [Comment]
+}
+
+type Query {
+  """
+  Post list
+  """
+  posts: [Post]
+}

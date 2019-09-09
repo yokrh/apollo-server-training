@@ -1,0 +1,44 @@
+# import Node from '../node/node.graphql'
+
+type Comment implements Node {
+  """
+  Comment ID
+  """
+  id: ID!
+
+  """
+  Parent post ID
+  """
+  postId: ID
+
+  """
+  Comment text
+  """
+  text: String
+}
+
+type Query {
+  """
+  Comment list
+  """
+  comments: [Comment]
+}
+
+type Mutation {
+  """
+  Update comment
+  """
+  updateComment(args: updateCommentArgs!): Comment!
+}
+
+input updateCommentArgs {
+  """
+  Comment ID
+  """
+  id: ID!
+
+  """
+  New comment text
+  """
+  text: String
+}

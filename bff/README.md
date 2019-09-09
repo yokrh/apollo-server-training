@@ -16,10 +16,15 @@ Access to http://localhost:4000
 
 ## Setup memo
 
-Almost
+### Core
+
 https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-express
 
 ```sh
 npm i -S express apollo-server-express
 ```
 
+### Plugin
+
+https://github.com/prisma/graphql-import
+https://github.com/havinhthai/graphql-merge-resolvers

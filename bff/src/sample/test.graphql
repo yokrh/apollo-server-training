@@ -1,0 +1,26 @@
+# Write your query or mutation here
+
+query testPosts {
+  posts {
+    id
+    text
+    comments {
+      id
+      text
+    }
+  }
+}
+
+query testComments {
+  comments {
+    id
+    text
+  }
+}
+
+mutation updateComment{
+  updateComment(args: { id: 2, text: "new text" }) {
+    id
+    text
+  }
+}
