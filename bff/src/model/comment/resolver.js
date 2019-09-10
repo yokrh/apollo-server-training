@@ -1,7 +1,14 @@
 const CommentConnector = require('./connector/connector.js');
 
 const Query = {
+  comment: async (parent, args, context, info) => {
+    console.log('comment', args);
+    const res = await CommentConnector.fetchComment(args.id);
+    return res;
+  },
+
   comments: async (parent, args, context, info) => {
+    console.log('comments');
     const res = await CommentConnector.fetchComments();
     return res;
   },
@@ -9,7 +16,7 @@ const Query = {
 
 const Mutation = {
   updateComment: async (parent, args, context, info) => {
-    console.log('updateComment args', args);
+    console.log('updateComment', args);
     const res = await CommentConnector.updateComment(args.args);
     return res;
   },

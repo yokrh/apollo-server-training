@@ -7,17 +7,22 @@ type Comment implements Node {
   id: ID!
 
   """
-  Parent post ID
-  """
-  postId: ID
-
-  """
   Comment text
   """
   text: String
+
+  """
+  Parent post ID
+  """
+  postId: ID
 }
 
 type Query {
+  """
+  Comment
+  """
+  comment(id: Int): Comment
+
   """
   Comment list
   """

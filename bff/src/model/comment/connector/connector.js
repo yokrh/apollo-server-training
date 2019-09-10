@@ -5,6 +5,13 @@ const mock = [
 ];
 
 class CommentConnector {
+  static async fetchComment(id) {
+    if (!id) return null;
+    const targetComments = mock.filter(comment => comment.id === parseInt(id));
+    if (targetComments.length === 0) return null;
+    return targetComments[0];
+  }
+
   static async fetchComments() {
     return mock;
   }
@@ -14,14 +21,14 @@ class CommentConnector {
   }
 
   static async updateComment(args) {
-    if (!args.id) return null;
-    if (!mock[args.id]) return null;
+    const { id, text } = args;
+    if (!id) return null;
 
-    const targetComments = mock.filter(comment => comment.id === parseInt(args.id));
-    if (targetComments.length === 0) return null;
+    const comment = await this.fetchComment(id);
+    if (!comment) return null;
 
-    const comment = targetComments[0];
-    comment.text = args.text;
+    if (text) comment.text = text;
+
     return comment;
   }
 }
