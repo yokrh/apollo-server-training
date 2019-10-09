@@ -3,18 +3,14 @@
 ```graphql
 # Write your query or mutation here
 
-query testPosts {
-  posts {
+query getComment {
+  comment(id: 1) {
     id
     text
-    comments {
-      id
-      text
-    }
   }
 }
 
-query testComments {
+query getComments {
   comments {
     id
     text
@@ -36,7 +32,7 @@ mutation updateComment($updateCommentArgs: updateCommentArgs!) {
 {
   "updateCommentArgs": {
     "id": 2,
-    "text": "new text"
+    "text": "new text2"
   } 
 }
 ```
