@@ -1,4 +1,5 @@
-const PostConnector = require('./connector/connector.js');
+const Pagination = require('../_pagination/pagination');
+const PostConnector = require('./connector/connector');
 
 const Post = {
   comments: async (parent, args, context, info) => {
@@ -19,8 +20,8 @@ const Query = {
 
   posts: async (parent, args, context, info) => {
     console.log('posts', args);
-    const res = await PostConnector.fetchPosts();
-    return res;
+    const posts = await PostConnector.fetchPosts();
+    return Pagination.getConnection(posts);
   },
 };
 

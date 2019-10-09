@@ -5,7 +5,7 @@ extend type Query {
   post(id: Int): Post
 
   """
-  Post list
+  Post list with page info
   """
-  posts: [Post]
+  posts: PostConnection
 }

@@ -1,3 +1,16 @@
+"Connection"
+type PostConnection implements Connection {
+  pageInfo: PageInfo
+  edges: [PostEdge]
+}
+
+"Edge"
+type PostEdge implements Edge {
+  cursor: String
+  node: Post!
+}
+
+"Node"
 type Post implements Node {
   """
   Post ID
