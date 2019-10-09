@@ -14,34 +14,3 @@ type Comment implements Node {
   """
   postId: ID
 }
-
-type Query {
-  """
-  Comment
-  """
-  comment(id: Int): Comment
-
-  """
-  Comment list
-  """
-  comments: [Comment]
-}
-
-type Mutation {
-  """
-  Update comment
-  """
-  updateComment(args: updateCommentArgs!): Comment!
-}
-
-input updateCommentArgs {
-  """
-  Comment ID
-  """
-  id: ID!
-
-  """
-  New comment text
-  """
-  text: String
-}

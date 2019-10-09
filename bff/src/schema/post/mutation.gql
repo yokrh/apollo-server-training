@@ -1,0 +1,18 @@
+type Mutation {
+  """
+  Update post
+  """
+  updatePost(args: updatePostArgs!): Post!
+}
+
+input updatePostArgs {
+  """
+  Post ID
+  """
+  id: ID!
+
+  """
+  New post text
+  """
+  text: String
+}

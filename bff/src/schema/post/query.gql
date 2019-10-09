@@ -1,0 +1,11 @@
+extend type Query {
+  """
+  Post
+  """
+  post(id: Int): Post
+
+  """
+  Post list
+  """
+  posts: [Post]
+}

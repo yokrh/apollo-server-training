@@ -19,34 +19,3 @@ type Post implements Node {
   """
   comments: [Comment]
 }
-
-type Query {
-  """
-  Post
-  """
-  post(id: Int): Post
-
-  """
-  Post list
-  """
-  posts: [Post]
-}
-
-type Mutation {
-  """
-  Update post
-  """
-  updatePost(args: updatePostArgs!): Post!
-}
-
-input updatePostArgs {
-  """
-  Post ID
-  """
-  id: ID!
-
-  """
-  New post text
-  """
-  text: String
-}

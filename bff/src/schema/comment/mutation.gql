@@ -1,0 +1,18 @@
+type Mutation {
+  """
+  Update comment
+  """
+  updateComment(args: updateCommentArgs!): Comment!
+}
+
+input updateCommentArgs {
+  """
+  Comment ID
+  """
+  id: ID!
+
+  """
+  New comment text
+  """
+  text: String
+}

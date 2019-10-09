@@ -1,0 +1,11 @@
+extend type Query {
+  """
+  Comment
+  """
+  comment(id: Int): Comment
+
+  """
+  Comment list
+  """
+  comments: [Comment]
+}

@@ -1,0 +1,4 @@
+interface Connection {
+  pageInfo: PageInfo
+  edges: [Edge]
+}
