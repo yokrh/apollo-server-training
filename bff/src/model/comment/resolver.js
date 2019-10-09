@@ -8,7 +8,7 @@ const Query = {
   },
 
   comments: async (parent, args, context, info) => {
-    console.log('comments');
+    console.log('comments', args);
     const res = await CommentConnector.fetchComments();
     return res;
   },
